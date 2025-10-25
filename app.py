@@ -5,17 +5,17 @@ app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
-  fighter = "Jon Johns"
-  fight_card = "Despicable 3"
-  return render_template('index.html', fighter=fighter, fight_card=fight_card)
+    fighter = "Jon Johns"
+    fight_card = "Despicable 3"
+    fight_task = ["New gloves", "Jump Rope", "Eat cake", "Get rich" ]
+    return render_template('index.html', fighter=fighter, fight_card=fight_card, fight_task=fight_task)
+
+@app.route('/timer', methods=['GET', 'POST  '])
+def timer():
+    return render_template('timer.html')
 
 
 
-@app.route('/study', methods=['GET', 'POST  '])
-
-def hello():
-
-  return "Hello we are here to study"
 
 
 """
