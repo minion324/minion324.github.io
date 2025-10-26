@@ -78,6 +78,29 @@ hr {
     margin-bottom: 20px;
 }
 
-.flashTitle {
+/*.flashTitle {*/
+/*    text-align: center;*/
+/*}*/
+
+.flashcard {
     text-align: center;
+}
+
+#flashContent {
+    padding: 100px;
+    margin-bottom: 10px;
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 15px;
+    color: #F0F0F0;
+}
+
+.flashButtons {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 15px;
+    color: #F0F0F0;
 }
