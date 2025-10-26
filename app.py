@@ -5,6 +5,9 @@ app = Flask(__name__, template_folder="templates", static_folder='static', stati
 def index():
     return render_template("timer.html")
 
+@app.route('/flashcards')
+def flashcard():
+    return render_template("flashcards.html")
 
 
 if __name__ == '__main__':

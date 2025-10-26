@@ -4,7 +4,7 @@ const stopTimer = document.querySelector("#stopTimer")
 const resetTimer = document.querySelector("#resetTimer")
 
 
-let initialTime = 10 * 60; //10mins to seconds
+let initialTime = 0.2 * 60; //10mins to seconds
 let currentTime = initialTime;
 let paused = true;
 let interval;
