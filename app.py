@@ -1,16 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask
 
-app = Flask(__name__, template_folder='templates', static_folder='static', static_url_path='/')
+app = Flask(__name__)
 
 @app.route('/')
+
 def index():
   return "<h1>hello world</h1>"
 
 
 
-@app.route('/timer')
-def timer():
-  return render_template("timer.html")
+@app.route('/hello')
+
+def hello():
+  return "Hello World"
 
 
 if __name__ == '__main__':

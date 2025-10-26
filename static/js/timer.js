@@ -30,9 +30,6 @@ function updateTime() {
    }
 }
 
-
-
-
 startTimer.addEventListener("click", () => {
     if (paused){
         paused = false;
