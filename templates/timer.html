@@ -1,13 +1,23 @@
-{% extends "base.html" %}
-{% block title %}UFC {% endblock %}
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
+{#<head>#}
+{#    <title>timer</title>#}
+{#    <link rel="stylesheet" href="/css/style.css">#}
+{#    <meta charset="UTF-8">#}
+{#</head>#}
 {% block content %}
-    <div id="timerContainer">
-        <div id="timeDisplay">
-            <h2>00:00:00</h2>
-        </div>
-        <button id="startTimer">Start</button>
-        <button id="stopTimer">Stop</button>
-        <button id="resetTimer">Reset</button>
+
+<body>
+    <div id="timeContainer">
+        <div id="timeDisplay">10:00</div>
+        <button id="startTimer" class="timer">Start</button>
+        <button id="stopTimer" class="timer">Stop</button>
+        <button id="resetTimer" class="timer">Reset</button>
     </div>
+    <script src="/js/timer.js"></script>
+
+</body>
+
 {% endblock %}
