@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}UFC {% endblock %}
+
+{% block content %}
+    <p>{{fighter}}</p>
+    <ul>
+        {%for i in fight_task %}
+            {% if i == "Eat cake"  %}
+                <li style="color: rgba(255,49,49,0.88)">{{i}}</li>
+            {% else %}
+                <li>{{i}}</li>
+            {% endif %}
+
+
+        {% endfor %}
+    </ul>
+    <p>{{fight_card}} </p>
+
+{% endblock %}
