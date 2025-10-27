@@ -11,11 +11,17 @@
 
 <body>
     <div id="timeContainer">
-        <div id="timeDisplay">10:00</div>
-        <button id="startTimer" class="timer">Start</button>
-        <button id="stopTimer" class="timer">Stop</button>
+        <div id="timeDisplay">25:00 </div>
+        <button id="startStopTimer" class="timer">Start</button>
+        <label for="breakDropdown"></label><select name="break" class="timer" id="breakDropdown">
+            <option value="pomdoro">Pomdoro</option>
+            <option value="shortBreak">Short Break</option>
+            <option value="longBreak">Long Break</option>
+        </select>
         <button id="resetTimer" class="timer">Reset</button>
     </div>
+
+
     <script src="/js/timer.js"></script>
 
 </body>

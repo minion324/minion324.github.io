@@ -1,13 +1,21 @@
-const timeDisplay = document.querySelector("#timeDisplay")
-const startTimer = document.querySelector("#startTimer")
-const stopTimer = document.querySelector("#stopTimer")
-const resetTimer = document.querySelector("#resetTimer")
+const timeDisplay = document.querySelector("#timeDisplay");
+const startStopTimer = document.querySelector("#startStopTimer");
+const breakDropdown = document.querySelector("#breakDropdown");
+const resetTimer = document.querySelector("#resetTimer");
 
 
-let initialTime = 0.2 * 60; //10mins to seconds
+let initialTime = 25 * 60; //10mins to seconds
 let currentTime = initialTime;
 let paused = true;
 let interval;
+
+breakDropdown.value = "pomdoro";
+
+const breakDictionary = {
+    "pomdoro" : 25,
+    "shortBreak" : 5,
+    "longBreak" : 15,
+};
 
 function pad (unit) {
         return (("0") + unit).length > 2 ? unit : "0" + unit;
@@ -23,6 +31,7 @@ function updateTime() {
    if (currentTime > 0) {
        currentTime--;
        updateDisplay();
+
    } else{
        paused=true;
        clearInterval(interval);
@@ -30,26 +39,35 @@ function updateTime() {
    }
 }
 
-startTimer.addEventListener("click", () => {
-    if (paused){
-        paused = false;
-        interval = setInterval(updateTime, 1000);
-
-        console.log("work")
-    }
-});
-
-stopTimer.addEventListener("click", () => {
-   if (!paused){
-       paused = true;
-       clearInterval(interval);
-   }
-});
-
-resetTimer.addEventListener("click",() => {
+function resetTimerFunc() {
     paused = true;
     clearInterval(interval);
     currentTime = initialTime;
     updateDisplay();
+    startStopTimer.textContent = "Start";
+}
+
+startStopTimer.addEventListener("click", () => {
+    if (paused){
+        paused = false;
+        interval = setInterval(updateTime, 1000);
+        startStopTimer.textContent = "Paused";
+    } else {
+        paused = true;
+        clearInterval(interval);
+        startStopTimer.textContent = "Start";
+    }
+});
+
+breakDropdown.addEventListener('change', (event)=> {
+    const selectedBreak = event.target.value;
+    console.log(selectedBreak);
+    initialTime = breakDictionary[selectedBreak] * 60;
+    resetTimerFunc();
+    });
+
+
+resetTimer.addEventListener("click",() => {
+    resetTimerFunc();
 });
 

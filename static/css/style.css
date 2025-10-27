@@ -10,7 +10,7 @@
 }
 
 #timeContainer {
-    max-width: 300px;
+    max-width: 400px;
     border: 3px solid;
     border-radius: 10px;
     text-align: center;
@@ -25,6 +25,11 @@
     font-size: 75px;
     font-family: roboto, monospace, serif;
     color: #F0F0F0;
+}
+
+#breakDropdown {
+    width:140px;
+    text-align: center;
 }
 
 #title {
@@ -104,3 +109,4 @@ hr {
     border-radius: 15px;
     color: #F0F0F0;
 }
+
