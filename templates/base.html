@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-
 <body>
     <div class="topNav">
-        <h1><img src="/images/wave.png" alt="wave icon" style="float:left;width:30px;height:30px;margin:9px;">Minionocus</h1>
+        <h1>
+            <img src="/images/wave.png" alt="wave icon" style="float:left;width:30px;height:30px;margin:9px;">
+            <a href="{{ url_for('index') }}">Minionoucs</a></h1>
         <div class="topButtons">
             <nav>
-                <button id="topContent">Report</button>
-                <button id="topContent">Flashcards</button>
-                <button id="topContent">Challenges</button>
+                <ul id="topUL">
+                    <li id="topContent"><a href="{{ url_for('report') }}">Report</a></li>
+                    <li id="topContent"><a href="{{ url_for('flashcards') }}">Flashcards</a></li>
+                    <li id="topContent"><a href="{{ url_for('challenges') }}">Challenges</a></li>
+                </ul>
             </nav>
         </div>
     </div>

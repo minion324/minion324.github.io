@@ -9,10 +9,10 @@ let currentTime = initialTime;
 let paused = true;
 let interval;
 
-breakDropdown.value = "pomdoro";
+breakDropdown.value = "pomodoro";
 
 const breakDictionary = {
-    "pomdoro" : 25,
+    "pomodoro" : 25,
     "shortBreak" : 5,
     "longBreak" : 15,
 };

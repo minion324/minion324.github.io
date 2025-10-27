@@ -46,17 +46,31 @@
     background-color: #607274;
     padding: 3px;
     color: #F0F0F0;
+    text-decoration: None;
 }
 
-.topButtons {
+.topNav a {
+    text-decoration: None;
+    color: #F0F0F0;
+}
+
+#topUL {
+    list-style-type: none;
+    text-align: center;
     display: flex;
-    justify-content: space-evenly;
-    gap: 10px;
-    align-items: center;
+    justify-content: center;
+    vertical-align: center;
 
 }
 
-#topContent {
+#topUL li {
+    padding-left: 5px;
+    margin-right: 5px;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+#topContent{
     width: 110px;
     height: 50px;
     border: 3px solid;
@@ -66,6 +80,16 @@
     border-color: #F0F0F0;
     background-color: #607274;
     font-family: roboto, monospace, serif;
+
+}
+
+#topContent a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    text-decoration: None;
+    color: #F0F0F0;
 }
 
 body {
@@ -93,20 +117,32 @@ hr {
 
 #flashContent {
     padding: 100px;
+    max-width: 500px;
     margin-bottom: 10px;
     background-color: #607274;
     border-color: #F0F0F0;
     border-radius: 15px;
     color: #F0F0F0;
+    font-family: roboto, monospace, serif;
 }
 
 .flashButtons {
     display: flex;
     justify-content: center;
     gap: 200px;
+
+}
+
+.flashBack {
     background-color: #607274;
     border-color: #F0F0F0;
-    border-radius: 15px;
+    border-radius: 3px;
     color: #F0F0F0;
 }
 
+.flashForward {
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 3px;
+    color: #F0F0F0;
+}
