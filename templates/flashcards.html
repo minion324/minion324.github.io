@@ -4,6 +4,13 @@
 
 <body>
 {#<h2 class="flashTitle">Flash Cards</h2>#}
+<div class="flashUtility">
+    <button id="removeCard">-</button>
+    <button id="exportCard">Export</button>
+    <button id="importCard">Import</button>
+    <button id="addCard">+</button>
+</div>
+
 <div class="flashcard">
     <button id="flashContent" >Content of card goes here</button>
     <div class="flashButtons">
@@ -11,6 +18,14 @@
         <button class="flashForward">Next</button>
     </div>
 </div>
+
+{#<form id="exportCard" method="POST" action="{{ url_for('exportCard') }}" enctype="multipart/form-data">#}
+{#    <input type="file" name="file" accept="application/json" required="required">#}
+{#    <input type="submit" value="Upload">#}
+{#</form>#}
+{##}
+
+
 <script src="/js/flashcard.js"></script>
 </body>
 

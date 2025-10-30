@@ -116,12 +116,66 @@ hr {
 }
 
 #flashContent {
-    padding: 100px;
-    max-width: 500px;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-bottom: 300px;
     margin-bottom: 10px;
     background-color: #607274;
     border-color: #F0F0F0;
     border-radius: 15px;
+    color: #F0F0F0;
+    font-family: roboto, monospace, serif;
+}
+
+.flashUtility{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 30px;
+}
+
+#addCard{
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 3px;
+    color: #F0F0F0;
+    font-family: roboto, monospace, serif;
+    font-weight: bold;
+}
+
+#removeCard{
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 3px;
+    color: #F0F0F0;
+    font-family: roboto, monospace, serif;
+    font-weight: bold;
+}
+
+#exportCard{
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 3px;
+    color: #F0F0F0;
+    font-family: roboto, monospace, serif;
+}
+
+#importCard{
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 3px;
     color: #F0F0F0;
     font-family: roboto, monospace, serif;
 }
@@ -146,3 +200,23 @@ hr {
     border-radius: 3px;
     color: #F0F0F0;
 }
+
+form {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+input {
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 3px;
+    color: #F0F0F0;
+}
+input[type="file"]::file-selector-button {
+    background-color: #607274;
+    border-color: #F0F0F0;
+    border-radius: 3px;
+    color: #F0F0F0;
+}
+
