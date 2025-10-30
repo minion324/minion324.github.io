@@ -20,7 +20,7 @@ def report():
     return "Yes"
 
 
-# javascript is requesting to flask to process ... and the flask is processing that request
+# javascript is requesting to flask to process the data and the flask is processing that request
 # and returns that response to javascript
 @app.route('/exportCard', methods=["POST"])
 def exportCard():
@@ -30,14 +30,15 @@ def exportCard():
         # Returns a Python dict (or list, depending on the JSON)
         data = request.get_json()
         json_string = json.dumps(data)
-        # file_path = "/home/minion/Documents/flashcard.json"
-        file_path = "flashcard.json"
+        file_path = "/home/minion/Documents/flashcard.json"
+        # file_path = "flashcard.json"
         with open(file_path, 'w') as file:
             file.write(json_string)
         print("Received Data:", data)
         # Jsonify is turning a python object into a JSON format
         return jsonify({"status": "success"})
     return None
+
 
 
 if __name__ == '__main__':

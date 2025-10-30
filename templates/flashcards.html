@@ -5,14 +5,13 @@
 <body>
 {#<h2 class="flashTitle">Flash Cards</h2>#}
 <div class="flashUtility">
-    <button id="removeCard">-</button>
     <button id="exportCard">Export</button>
-    <button id="importCard">Import</button>
-    <button id="addCard">+</button>
+    <input type="file" id="file-upload-input" accept="application/json" hidden />
+    <label for="file-upload-input" class="importCard">Import</label>
 </div>
 
 <div class="flashcard">
-    <button id="flashContent" >Content of card goes here</button>
+    <button id="flashContent" ></button>
     <div class="flashButtons">
         <button class="flashBack">Back</button>
         <button class="flashForward">Next</button>

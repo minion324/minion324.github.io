@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const flashBackward = document.querySelector(".flashBack");
     const flashContent = document.querySelector("#flashContent");
     const exportCard = document.querySelector("#exportCard");
-    const importCard = document.querySelector("#importCard");
-
+    const fileInput = document.querySelector("#file-upload-input");
     //the number is the key and the value is an anonymous object literal so to access something it would be myFlashDictionary.1.question which returns
     //What are the disadvantages to wireless connection?
     const myFlashDictionary = new Map();
@@ -20,24 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
         answer: "A programming paradigm based on the concept of 'objects', which can contain data and code."
     });
 
-
+    flashContent.textContent = myFlashDictionary.get(1).question;
     let currentCardId = 1;
     let isShowingQuestion = true;
 
-    //From fromEntries is turning map which is a data structure into an object
-    let jsonDictionary = Object.fromEntries(myFlashDictionary);
-    console.log(jsonDictionary);
-    //Turns Object into JSON string
-    let jsonString = JSON.stringify(jsonDictionary);
-    console.log("Json string below");
-    console.log(jsonString);
-
-
     //Import and export
-    //Me trying out how to send fetch post request to backend
 
     async function exportCardFunc(){
         try {
+            const jsonObject =  Object.fromEntries(myFlashDictionary);
+            const jsonString = JSON.stringify(jsonObject);
             const response = await fetch('/exportCard', {
                 method: 'POST',
                 headers: {
@@ -61,10 +52,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function importCardFunc() {
+        const file = fileInput.files[0];
+        if (!file) {
+            return alert("Please select a file!");
+        }
         try {
-
+            const importText = await file.text();
+            const jsonToObject  = JSON.parse(importText);
+            const objectToArray = Object.entries(jsonToObject);
+            // Object.entries returns:
+            // [
+            //   ["1", {question: "What is OOP?", answer: "..."}],
+            //   ["2", {question: "What is JSON?", answer: "..."}]
+            // ]
+            myFlashDictionary.clear();
+            for(const [key, value] of objectToArray) {
+                myFlashDictionary.set(parseInt(key), value)
+            }
+            currentCardId = 1;
+            flashContent.textContent = myFlashDictionary.get(1).question;
+            isShowingQuestion = true;
+            alert("Import was successful")
         } catch {
-
+            alert("Failed to import")
         }
     }
 
@@ -120,8 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (exportCard) {
         exportCard.addEventListener("click", exportCardFunc);
     }
-    if(importCard) {
-        importCard.addEventListener("click", importCardFunc);
+    if(fileInput) {
+        fileInput.addEventListener("change", importCardFunc);
     }
 
 });
